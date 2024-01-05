@@ -35,6 +35,10 @@ class User : public DataObjectStructure {
     void setPassword(string password);
 
     bool isMatchingPassword(string password) const;
+
+    void populateObject(DataObject* object) override;
+    void fromObject(DataObject* object) override;
+    uint32_t getObjectId() const override;
 };
 
 #endif

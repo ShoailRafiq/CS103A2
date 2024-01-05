@@ -26,6 +26,10 @@ class Complaint : public DataObjectStructure {
     string getMessage() const;
 
     void setMessage(string message);
+
+    void populateObject(DataObject* object) override;
+    void fromObject(DataObject* object) override;
+    uint32_t getObjectId() const override;
 };
 
 #endif

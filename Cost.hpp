@@ -11,6 +11,7 @@ class Cost {
 
    public:
     Cost(int32_t dollars, int32_t cents);
+    Cost(int32_t cents);
     Cost();
 
     int32_t getDollars() const;

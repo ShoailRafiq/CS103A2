@@ -30,6 +30,16 @@ class TripTransaction : public DataObjectStructure {
 
     Cost getCost() const;
     void setCost(Cost cost);
+
+    string getStartLocation() const;
+    void setStartLocation(string startLocation);
+
+    string getEndLocation() const;
+    void setEndLocation(string endLocation);
+
+    void populateObject(DataObject* object) override;
+    void fromObject(DataObject* object) override;
+    uint32_t getObjectId() const override;
 };
 
 #endif

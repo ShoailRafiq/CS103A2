@@ -24,13 +24,17 @@ class LostItem : public DataObjectStructure {
 
     void setTrip(TripTransaction const& trip);
 
-    uint32_t getReporter();
+    uint32_t getReporter() const;
 
     void setReporter(User const& reporter);
 
     string getDescription() const;
 
     void setDescription(string description);
+
+    void populateObject(DataObject* object) override;
+    void fromObject(DataObject* object) override;
+    uint32_t getObjectId() const override;
 };
 
 void lostItemMenu(User const& user, DataObjectCollection& lostItems);
