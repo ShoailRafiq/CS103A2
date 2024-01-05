@@ -1,3 +1,6 @@
+#ifndef TRIP_TRANSACTION
+#define TRIP_TRANSACTION 1
+
 #include "Cost.hpp"
 #include "DataObject.hpp"
 #include "User.hpp";
@@ -28,3 +31,5 @@ class TripTransaction : public DataObjectStructure {
     Cost getCost() const;
     void setCost(Cost cost);
 };
+
+#endif

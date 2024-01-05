@@ -1,3 +1,6 @@
+#ifndef LOST_ITEM
+#define LOST_ITEM 1
+
 #include "DataObject.hpp"
 #include "TripTransaction.hpp"
 #include "User.hpp";
@@ -31,3 +34,5 @@ class LostItem : public DataObjectStructure {
 };
 
 void lostItemMenu(User const& user, DataObjectCollection& lostItems);
+
+#endif

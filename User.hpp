@@ -1,3 +1,6 @@
+#ifndef USER
+#define USER 1
+
 #include "DataObject.hpp"
 #include <stdint.h>
 
@@ -33,3 +36,5 @@ class User : public DataObjectStructure {
 
     bool isMatchingPassword(string password) const;
 };
+
+#endif

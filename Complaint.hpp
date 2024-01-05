@@ -1,3 +1,6 @@
+#ifndef COMPLAINT
+#define COMPLAINT 1
+
 #include "DataObject.hpp"
 #include "TripTransaction.hpp"
 #include "User.hpp";
@@ -24,3 +27,5 @@ class Complaint : public DataObjectStructure {
 
     void setMessage(string message);
 };
+
+#endif
