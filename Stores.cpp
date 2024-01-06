@@ -12,15 +12,15 @@ DataObjectCollection* Stores::getUsers() {
 }
 
 DataObjectCollection* Stores::getTripTransactions() {
-    return &Stores::users;
+    return &Stores::tripTransactions;
 }
 
 DataObjectCollection* Stores::getLostItems() {
-    return &Stores::users;
+    return &Stores::lostItems;
 }
 
 DataObjectCollection* Stores::getComplaints() {
-    return &Stores::users;
+    return &Stores::complaints;
 }
 
 void Stores::setActiveUser(User* activeUser) {
