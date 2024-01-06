@@ -149,6 +149,7 @@ void displayTripsList() {
     User* driver = new User();
     User* customer = new User();
 
+    // Display the list header
     displayDivider();
     cout << "ID, Driver, Customer, Cost, Start Loc, End Loc" << endl;
     displayDivider();
@@ -189,10 +190,12 @@ void displayTripsList() {
         totalCostCents += cost.getTotalCents();
     }
 
+    // Free the temp objects
     delete trip;
     delete driver;
     delete customer;
 
+    // Create and dislpay the total cost
     Cost totalCost = Cost(totalCostCents);
     displayDivider();
     cout << "Total Cost: ";
@@ -411,7 +414,6 @@ void displayEditTrip() {
 
 void displayViewTrips() {
     displayDivider();
-
     cout << "Trip List" << endl;
 
     displayTripsList();
