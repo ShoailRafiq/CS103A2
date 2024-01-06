@@ -125,6 +125,14 @@ void displayInitAdminMenu();
 void displayUsersList();
 
 /// <summary>
+/// Prompts the user to select a user from a list of
+/// users
+/// </summary>
+/// <returns>The selected user or nullptr if no user was
+/// selected</returns>
+User* promptSelectUser();
+
+/// <summary>
 /// Displays a edit user menu
 /// </summary>
 void displayEditUser();

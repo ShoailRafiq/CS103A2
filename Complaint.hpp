@@ -48,7 +48,8 @@ class Complaint : public DataObjectStructure {
 /// Prompts the user to select a complaint from a list of
 /// complaints
 /// </summary>
-/// <returns>The selected complaint</returns>
+/// <returns>The selected complaint or nullptr if no complaint was
+/// selected</returns>
 Complaint* promptSelectComplaint();
 
 /// <summary>

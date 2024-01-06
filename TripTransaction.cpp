@@ -289,6 +289,12 @@ void displayEditTrip() {
     displayDivider();
     cout << "Edit Trip" << endl;
 
+    // Ensure there is actually trips available
+    if (trips->getObjectCount() == 0) {
+        cerr << "You have no trips to edit" << endl;
+        return;
+    }
+
     // Prompt the user to pick the trip to edit
     TripTransaction* trip = promptSelectTrip();
 
@@ -425,6 +431,12 @@ void displayCancelTrip() {
     // Display the title
     displayDivider();
     cout << "Cancel Trip" << endl;
+
+    // Ensure there is actually trips available
+    if (trips->getObjectCount() == 0) {
+        cerr << "You have no trips to cancel" << endl;
+        return;
+    }
 
     // Prompt the user to pick the trip to cancel
     TripTransaction* trip = promptSelectTrip();

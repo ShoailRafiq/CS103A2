@@ -57,6 +57,14 @@ class LostItem : public DataObjectStructure {
 void displayLostItemsList();
 
 /// <summary>
+/// Prompts the user to select a lost item from a list of
+/// lost items
+/// </summary>
+/// <returns>The selected lost item or nullptr if no lost item was
+/// selected</returns>
+LostItem* promptSelectLostItem();
+
+/// <summary>
 /// Displays the create lost item menu
 /// </summary>
 void displayCreateLostItem();

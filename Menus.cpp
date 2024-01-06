@@ -65,30 +65,25 @@ void displayTripsMenu() {
         displayDivider();
         cout << "Trips Menu" << endl;
         displayDivider();
-        cout << " 1) Edit Trip" << endl;
-        cout << " 2) View Trips" << endl;
-        cout << " 3) Cancel Trip" << endl;
-        cout << " 4) Go Back" << endl;
+        cout << " 1) View Trips" << endl;
+        cout << " 2) Cancel Trip" << endl;
+        cout << " 3) Go Back" << endl;
         displayDivider();
         cout << "Enter your desired menu: ";
 
         // Get the user menu choice
-        int choice = getInputInt(1, 4);
+        int choice = getInputInt(1, 3);
 
         switch (choice) {
             case 1: {
-                displayEditTrip();
-                break;
-            }
-            case 2: {
                 displayViewTrips();
                 break;
             }
-            case 3: {
+            case 2: {
                 displayCancelTrip();
                 break;
             }
-            case 4: {
+            case 3: {
                 return;
             }
         }
@@ -108,7 +103,7 @@ void displayLostItemsMenu() {
         cout << " 1) Create Lost Item" << endl;
         cout << " 2) Edit Lost Item" << endl;
         cout << " 3) View Lost Items" << endl;
-        cout << " 4) Delete Lost Items" << endl;
+        cout << " 4) Delete Lost Item" << endl;
         cout << " 5) Go Back" << endl;
         displayDivider();
         cout << "Enter your desired menu: ";

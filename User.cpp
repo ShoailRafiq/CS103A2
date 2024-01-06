@@ -392,6 +392,8 @@ void displayAuthMenu() {
 
 void displayUsersList() {}
 
+User* promptSelectUser() {}
+
 void displayEditUser() {}
 
 void displayViewUsers() {}

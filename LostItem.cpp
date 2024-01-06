@@ -49,6 +49,8 @@ void LostItem::fromObject(DataObject* object) {
 
 void displayLostItemsList() {}
 
+LostItem* promptSelectLostItem() {}
+
 void displayCreateLostItem() {}
 
 void displayEditLostItem() {}
