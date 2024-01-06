@@ -127,7 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Complaint.cpp" />
+    <ClCompile Include="Cost.cpp" />
     <ClCompile Include="CS103_A2.cpp" />
+    <ClCompile Include="DataObject.cpp" />
+    <ClCompile Include="LostItem.cpp" />
+    <ClCompile Include="TripTransaction.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UserInput.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Complaint.hpp" />
+    <ClInclude Include="Cost.hpp" />
+    <ClInclude Include="DataObject.hpp" />
+    <ClInclude Include="LostItem.hpp" />
+    <ClInclude Include="TripTransaction.hpp" />
+    <ClInclude Include="User.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UserInput.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

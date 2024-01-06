@@ -41,4 +41,32 @@ class User : public DataObjectStructure {
     uint32_t getObjectId() const override;
 };
 
+/// <summary>
+/// Finds the admin user from the users data collection if one exists,
+/// if none exists a nullptr is returned instead
+/// </summary>
+/// <returns>The admin user or a nullptr</returns>
+User* getAdminUser();
+
+bool isAdminUserSet();
+
+User* getUserByName(string const& name);
+
+/// <summary>
+/// Display a menu showing the login and registration options
+/// </summary>
+void displayAuthMenu();
+
+/// <summary>
+/// Displays the login menu
+/// </summary>
+void displayLoginMenu();
+
+/// <summary>
+/// Displays the registration menu
+/// </summary>
+void displayRegisterMenu();
+
+void displayInitAdminMenu();
+
 #endif

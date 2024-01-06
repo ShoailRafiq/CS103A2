@@ -183,7 +183,7 @@ class DataObject {
 };
 
 /// <summary>
-/// Abstract class implemented by structures that can be
+/// Interface implemented by structures that can be
 /// serialized and deserialized as DataObjects
 /// </summary>
 class DataObjectStructure {

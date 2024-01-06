@@ -18,7 +18,7 @@ The C++ 14 code standard is used as it is the default Visual Studio implementati
 
 ## Imports
 
-Any included modules or functions must #include the required file directly. Using “using namespace std” is forbidden, instead required modules can use the using syntax to include the specific item (using string) or can access the item through its namespace (std::string)
+Any included modules or functions must #include the required file directly unless they already include a header file that includes the desired header. Using “using namespace std” is forbidden, instead required modules can use the using syntax to include the specific item (using string) or can access the item through its namespace (std::string), this is only required when the item is within a namespace
 
 ## Formatting
 

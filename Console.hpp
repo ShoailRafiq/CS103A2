@@ -1,12 +1,18 @@
 
-#ifndef USER_INPUT
-#define USER_INPUT 1
+#ifndef CONSOLE
+#define CONSOLE 1
 
+#include <iostream>
 #include <stdint.h>
 #include <string>
 
 using std::int32_t;
 using std::string;
+
+/// <summary>
+/// Prints a divider line to the console
+/// </summary>
+void displayDivider();
 
 /// <summary>
 /// Reads an int value from user input
@@ -23,6 +29,12 @@ int32_t getInputInt(int32_t min, int32_t max);
 /// <param name="max"></param>
 /// <returns></returns>
 float getInputFloat(float min, float max);
+
+/// <summary>
+/// Reads a boolean input
+/// </summary>
+/// <returns></returns>
+bool getInputBool();
 
 /// <summary>
 /// Reads a string from user input
