@@ -9,4 +9,12 @@ void displayDriverMenu();
 
 void displayAdminMenu();
 
+void displayTripsMenu();
+
+void displayLostItemsMenu();
+
+void displayComplaintsMenu();
+
+void displayUsersMenu();
+
 #endif
