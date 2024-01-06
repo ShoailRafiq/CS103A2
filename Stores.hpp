@@ -24,6 +24,18 @@ class Stores {
 
     static void setActiveUser(User* activeUser);
     static User* getActiveUser();
+
+    /// <summary>
+    /// Loads all the data object collections that
+    /// this store contains
+    /// </summary>
+    static void load();
+
+    /// <summary>
+    /// Saves all the data object collections that
+    /// this store contains
+    /// </summary>
+    static void save();
 };
 
 #endif

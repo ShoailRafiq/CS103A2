@@ -21,7 +21,7 @@
     <ClCompile Include="DataObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UserInput.cpp">
+    <ClCompile Include="Console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cost.cpp">
@@ -37,6 +37,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Complaint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Stores.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,9 +65,15 @@
     <ClInclude Include="Complaint.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Stores.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UserInput.hpp">
+    <None Include="Console.hpp">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Menus.hpp">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

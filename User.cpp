@@ -155,9 +155,14 @@ void displayLoginMenu() {
 void displayInitAdminMenu() {
     while (true) {
         displayDivider();
-        cout << "Create Admin Account - Please enter the crendetials for the "
-                "new admin account"
+        cout << "Create Admin Account" << endl;
+        displayDivider();
+
+        cout << "Please enter the credentials for the new admin account. This\n"
+                "is a one-time process that happenes when the application is\n"
+                "first started"
              << endl;
+
         displayDivider();
 
         string name;
@@ -169,6 +174,8 @@ void displayInitAdminMenu() {
                 cerr << "Name cannot be empty, please try again" << endl;
                 continue;
             }
+
+            break;
         }
 
         string password;
@@ -180,6 +187,8 @@ void displayInitAdminMenu() {
                 cerr << "Password cannot be empty, please try again" << endl;
                 continue;
             }
+
+            break;
         }
 
         string confirmPassword;
@@ -194,6 +203,8 @@ void displayInitAdminMenu() {
                      << endl;
                 continue;
             }
+
+            break;
         }
 
         cout << "Admin account creation complete, you are now logged in as "
@@ -226,3 +237,5 @@ void displayRegisterMenu() {
         displayDivider();
     }
 }
+
+void displayAuthMenu() {}

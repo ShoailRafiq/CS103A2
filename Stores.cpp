@@ -5,6 +5,7 @@ DataObjectCollection Stores::tripTransactions =
     DataObjectCollection("tripTransactions.db");
 DataObjectCollection Stores::lostItems = DataObjectCollection("lostItems.db");
 DataObjectCollection Stores::complaints = DataObjectCollection("complaints.db");
+User* Stores::activeUser = nullptr;
 
 DataObjectCollection* Stores::getUsers() {
     return &Stores::users;
@@ -34,3 +35,7 @@ void Stores::setActiveUser(User* activeUser) {
 User* Stores::getActiveUser() {
     return Stores::activeUser;
 }
+
+void Stores::load() {}
+
+void Stores::save() {}

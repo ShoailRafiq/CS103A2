@@ -21,6 +21,8 @@ class Cost {
     void setCents(int32_t cents);
 
     int32_t getTotalCents() const;
+
+    void display() const;
 };
 
 #endif
