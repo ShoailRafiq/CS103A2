@@ -125,3 +125,9 @@ bool getInputBool() {
         }
     }
 }
+
+string getInputString() {
+    string value;
+    std::getline(cin, value);
+    return value;
+}
