@@ -283,7 +283,14 @@ class DataObjectCollection {
     /// </summary>
     /// <param name="id">The ID of the object to return</param>
     /// <returns>The object with the provided ID or null</returns>
-    DataObject* getObject(uint32_t id);
+    DataObject* getObjectById(uint32_t id);
+
+    /// <summary>
+    /// Gets an object by index in the objects list
+    /// </summary>
+    /// <param name="index">The index of the object</param>
+    /// <returns>The object at the index</returns>
+    DataObject* getObject(uint32_t index);
 
     /// <summary>
     /// Provides the total number of objects stored in this collection

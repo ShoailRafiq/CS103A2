@@ -30,5 +30,5 @@ int32_t Cost::getTotalCents() const {
 }
 
 void Cost::display() const {
-    printf_s("$%lli.%.2i", Cost::dollars, Cost::cents);
+    printf_s("$%i.%.2i", Cost::dollars, Cost::cents);
 }

@@ -6,17 +6,44 @@
 
 using std::int32_t;
 
+/// <summary>
+/// Enumeration of the various user types
+/// </summary>
 enum UserType : int32_t {
+    /// <summary>
+    /// Customer general user
+    /// </summary>
     CUSTOMER = 0x0,
+    /// <summary>
+    /// Taxi driver user
+    /// </summary>
     DRIVER = 0x1,
+    /// <summary>
+    /// Admin user
+    /// </summary>
     ADMIN = 0x2,
 };
 
+/// <summary>
+/// Represents a user of the application
+/// </summary>
 class User : public DataObjectStructure {
    private:
+    /// <summary>
+    /// Unique ID of the user object
+    /// </summary>
     uint32_t id;
+    /// <summary>
+    /// The type of user
+    /// </summary>
     UserType type;
+    /// <summary>
+    /// The name of the user
+    /// </summary>
     string name;
+    /// <summary>
+    /// The password of the user
+    /// </summary>
     string password;
 
    public:
@@ -34,7 +61,12 @@ class User : public DataObjectStructure {
 
     void setPassword(string password);
 
-    bool isMatchingPassword(string password) const;
+    /// <summary>
+    /// Checks if the password for this user matches the provided password
+    /// </summary>
+    /// <param name="password">The password to compare against</param>
+    /// <returns>Whether the passwords match</returns>
+    bool isMatchingPassword(string const& password) const;
 
     void populateObject(DataObject* object) override;
     void fromObject(DataObject* object) override;
@@ -48,8 +80,17 @@ class User : public DataObjectStructure {
 /// <returns>The admin user or a nullptr</returns>
 User* getAdminUser();
 
+/// <summary>
+/// Checks if an admin user has been created
+/// </summary>
+/// <returns>Whether the admin user has been created</returns>
 bool isAdminUserSet();
 
+/// <summary>
+/// Finds a user with a name that matches the provided name
+/// </summary>
+/// <param name="name">The name to search for</param>
+/// <returns>The pointer to the found user or null</returns>
 User* getUserByName(string const& name);
 
 /// <summary>
@@ -67,6 +108,9 @@ void displayLoginMenu();
 /// </summary>
 void displayRegisterMenu();
 
+/// <summary>
+/// Displays the admin initialization menu
+/// </summary>
 void displayInitAdminMenu();
 
 #endif

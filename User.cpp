@@ -33,7 +33,7 @@ void User::setPassword(string password) {
     User::password = password;
 }
 
-bool User::isMatchingPassword(string password) const {
+bool User::isMatchingPassword(string const& password) const {
     return User::password == password;
 }
 
@@ -238,4 +238,13 @@ void displayRegisterMenu() {
     }
 }
 
-void displayAuthMenu() {}
+void displayAuthMenu() {
+    while (true) {
+        displayDivider();
+        cout << "Auth Menu" << endl;
+        displayDivider();
+
+        while (true) {
+        }
+    }
+}

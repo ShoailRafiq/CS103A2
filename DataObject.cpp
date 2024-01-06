@@ -114,7 +114,7 @@ void DataObjectCollection::save() const {
     stream.close();
 }
 
-DataObject* DataObjectCollection::getObject(uint32_t id) {
+DataObject* DataObjectCollection::getObjectById(uint32_t id) {
     // Search the objects for a matching ID
     for (size_t i = 0; i < objects.size(); i++) {
         DataObject* object = &objects[i];
@@ -125,6 +125,10 @@ DataObject* DataObjectCollection::getObject(uint32_t id) {
 
     // No matching object found
     return nullptr;
+}
+
+DataObject* DataObjectCollection::getObject(uint32_t index) {
+    return &objects[index];
 }
 
 void DataObjectCollection::deleteObject(uint32_t id) {
