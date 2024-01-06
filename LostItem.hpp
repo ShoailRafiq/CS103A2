@@ -37,6 +37,18 @@ class LostItem : public DataObjectStructure {
     uint32_t getObjectId() const override;
 };
 
-void lostItemMenu(User const& user, DataObjectCollection& lostItems);
+/// <summary>
+/// Displays a list of the lost items, relevant for the
+/// current active user type
+/// </summary>
+void displayLostItemsList();
+
+void displayCreateLostItem();
+
+void displayEditLostItem();
+
+void displayViewLostItems();
+
+void displayDeleteLostItem();
 
 #endif

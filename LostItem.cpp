@@ -46,3 +46,13 @@ void LostItem::fromObject(DataObject* object) {
     reporter = (uint32_t)*object->getEntry("reporter")->asInt();
     description = *object->getEntry("description")->asString();
 }
+
+void displayLostItemsList() {}
+
+void displayCreateLostItem() {}
+
+void displayEditLostItem() {}
+
+void displayViewLostItems() {}
+
+void displayDeleteLostItem() {}

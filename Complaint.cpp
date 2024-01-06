@@ -36,3 +36,13 @@ void Complaint::fromObject(DataObject* object) {
     author = (uint32_t)*object->getEntry("author")->asInt();
     message = *object->getEntry("message")->asString();
 }
+
+void displayComplaintsList() {}
+
+void displayCreateComplaint() {}
+
+void displayEditComplaint() {}
+
+void displayViewComplaints() {}
+
+void displayDeleteComplaint() {}

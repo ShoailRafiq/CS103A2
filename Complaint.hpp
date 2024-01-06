@@ -32,4 +32,18 @@ class Complaint : public DataObjectStructure {
     uint32_t getObjectId() const override;
 };
 
+/// <summary>
+/// Displays a list of the complaints, relevant for the
+/// current active user type
+/// </summary>
+void displayComplaintsList();
+
+void displayCreateComplaint();
+
+void displayEditComplaint();
+
+void displayViewComplaints();
+
+void displayDeleteComplaint();
+
 #endif

@@ -72,3 +72,13 @@ void TripTransaction::fromObject(DataObject* object) {
     startLocation = *object->getEntry("startLocation")->asString();
     endLocation = *object->getEntry("endLocation")->asString();
 }
+
+void displayTripsList() {}
+
+void displayCreateTrip() {}
+
+void displayEditTrip() {}
+
+void displayViewTrips() {}
+
+void displayCancelTrip() {}

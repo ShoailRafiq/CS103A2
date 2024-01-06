@@ -42,4 +42,18 @@ class TripTransaction : public DataObjectStructure {
     uint32_t getObjectId() const override;
 };
 
+/// <summary>
+/// Displays a list of the trips, relevant for the
+/// current active user type
+/// </summary>
+void displayTripsList();
+
+void displayCreateTrip();
+
+void displayEditTrip();
+
+void displayViewTrips();
+
+void displayCancelTrip();
+
 #endif

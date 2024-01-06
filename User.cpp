@@ -360,3 +360,11 @@ void displayAuthMenu() {
         }
     }
 }
+
+void displayUsersList() {}
+
+void displayEditUser() {}
+
+void displayViewUsers() {}
+
+void displayDeleteUser() {}

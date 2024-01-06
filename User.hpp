@@ -113,4 +113,15 @@ void displayRegisterMenu();
 /// </summary>
 void displayInitAdminMenu();
 
+/// <summary>
+/// Displays a list of all users
+/// </summary>
+void displayUsersList();
+
+void displayEditUser();
+
+void displayViewUsers();
+
+void displayDeleteUser();
+
 #endif

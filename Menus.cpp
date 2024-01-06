@@ -1,5 +1,8 @@
+#include "Complaint.hpp"
 #include "Console.hpp"
+#include "LostItem.hpp"
 #include "Stores.hpp"
+#include "TripTransaction.hpp"
 #include "User.hpp"
 #include <iostream>
 
@@ -17,7 +20,7 @@ void displayTripsMenu() {
         cout << " 1) Create Trip" << endl;
         cout << " 2) Edit Trip" << endl;
         cout << " 3) View Trips" << endl;
-        cout << " 4) Delete Trip" << endl;
+        cout << " 4) Cancel Trip" << endl;
         cout << " 5) Go Back" << endl;
 
         displayDivider();
@@ -28,15 +31,19 @@ void displayTripsMenu() {
 
         switch (choice) {
             case 1: {
+                displayCreateTrip();
                 break;
             }
             case 2: {
+                displayEditTrip();
                 break;
             }
             case 3: {
+                displayViewTrips();
                 break;
             }
             case 4: {
+                displayCancelTrip();
                 break;
             }
             case 5: {
@@ -54,10 +61,10 @@ void displayLostItemsMenu() {
         displayDivider();
         cout << "Lost Items Menu" << endl;
         displayDivider();
-        cout << " 1) Create Trip" << endl;
-        cout << " 2) Edit Trip" << endl;
-        cout << " 3) View Trips" << endl;
-        cout << " 4) Delete Trip" << endl;
+        cout << " 1) Create Lost Item" << endl;
+        cout << " 2) Edit Lost Item" << endl;
+        cout << " 3) View Lost Items" << endl;
+        cout << " 4) Delete Lost Items" << endl;
         cout << " 5) Go Back" << endl;
         displayDivider();
         cout << "Enter your desired menu: ";
@@ -67,15 +74,19 @@ void displayLostItemsMenu() {
 
         switch (choice) {
             case 1: {
+                displayCreateLostItem();
                 break;
             }
             case 2: {
+                displayEditLostItem();
                 break;
             }
             case 3: {
+                displayViewLostItems();
                 break;
             }
             case 4: {
+                displayDeleteLostItem();
                 break;
             }
             case 5: {
@@ -105,15 +116,19 @@ void displayComplaintsMenu() {
 
         switch (choice) {
             case 1: {
+                displayCreateComplaint();
                 break;
             }
             case 2: {
+                displayEditComplaint();
                 break;
             }
             case 3: {
+                displayViewComplaints();
                 break;
             }
             case 4: {
+                displayDeleteComplaint();
                 break;
             }
             case 5: {
@@ -142,12 +157,15 @@ void displayUsersMenu() {
 
         switch (choice) {
             case 1: {
+                displayViewUsers();
                 break;
             }
             case 2: {
+                displayEditUser();
                 break;
             }
             case 3: {
+                displayDeleteUser();
                 break;
             }
             case 4: {
