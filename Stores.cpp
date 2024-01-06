@@ -36,6 +36,16 @@ User* Stores::getActiveUser() {
     return Stores::activeUser;
 }
 
-void Stores::load() {}
+void Stores::load() {
+    users.load();
+    tripTransactions.load();
+    lostItems.load();
+    complaints.load();
+}
 
-void Stores::save() {}
+void Stores::save() {
+    users.save();
+    tripTransactions.save();
+    lostItems.save();
+    complaints.save();
+}
