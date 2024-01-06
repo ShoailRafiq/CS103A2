@@ -334,6 +334,11 @@ void displayRegisterMenu() {
 
 void displayAuthMenu() {
     displayDivider();
+    cout << "Taxi Trip booking system. Book and manage taxi"
+            "services.\nContact: (+64) 123 4567 890"
+         << endl;
+
+    displayDivider();
     cout << "Authentication Menu" << endl;
     displayDivider();
     cout << " 1) Login" << endl;

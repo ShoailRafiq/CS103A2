@@ -15,25 +15,27 @@ using std::string;
 void displayDivider();
 
 /// <summary>
-/// Reads an int value from user input
+/// Reads an int value from user input. Handles invalid input
+/// and validation of the min max range
 /// </summary>
-/// <param name="min"></param>
-/// <param name="max"></param>
-/// <returns></returns>
+/// <param name="min">The minimum allowed value</param>
+/// <param name="max">The maximum allowed value</param>
+/// <returns>The value from user input</returns>
 int32_t getInputInt(int32_t min, int32_t max);
 
 /// <summary>
-/// Reads a float value from user input
+/// Reads a float value from user input, handles invalid
+/// input and validation of the min max range
 /// </summary>
-/// <param name="min"></param>
-/// <param name="max"></param>
-/// <returns></returns>
+/// <param name="min">The minimum allowed value</param>
+/// <param name="max">The maximum allowed value</param>
+/// <returns>The value from user input</returns>
 float getInputFloat(float min, float max);
 
 /// <summary>
-/// Reads a boolean input
+/// Reads a boolean input from user input
 /// </summary>
-/// <returns></returns>
+/// <returns>The boolean value</returns>
 bool getInputBool();
 
 /// <summary>

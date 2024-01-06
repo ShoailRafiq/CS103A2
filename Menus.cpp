@@ -11,9 +11,12 @@ using std::cout;
 using std::endl;
 
 void displayTripsMenu() {
+    // Get the active user and trips collection
     DataObjectCollection* trips = Stores::getTripTransactions();
     User* activeUser = Stores::getActiveUser();
+
     while (true) {
+        // Display the menu
         displayDivider();
         cout << "Trips Menu" << endl;
         displayDivider();
@@ -22,7 +25,6 @@ void displayTripsMenu() {
         cout << " 3) View Trips" << endl;
         cout << " 4) Cancel Trip" << endl;
         cout << " 5) Go Back" << endl;
-
         displayDivider();
         cout << "Enter your desired menu: ";
 
@@ -54,10 +56,12 @@ void displayTripsMenu() {
 }
 
 void displayLostItemsMenu() {
+    // Get the active user and lost items collection
     DataObjectCollection* lostItems = Stores::getLostItems();
     User* activeUser = Stores::getActiveUser();
 
     while (true) {
+        // Display the menu
         displayDivider();
         cout << "Lost Items Menu" << endl;
         displayDivider();
@@ -100,6 +104,7 @@ void displayComplaintsMenu() {
     DataObjectCollection* complaints = Stores::getComplaints();
     User* activeUser = Stores::getActiveUser();
     while (true) {
+        // Display the menu
         displayDivider();
         cout << "Complaints Menu" << endl;
         displayDivider();
@@ -253,6 +258,7 @@ void displayAdminMenu() {
 }
 
 void displayDriverMenu() {
+    // Display the menu
     displayDivider();
     std::cout << "Driver Main Menu" << std::endl;
     displayDivider();

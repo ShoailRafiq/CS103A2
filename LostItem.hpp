@@ -6,13 +6,26 @@
 #include "User.hpp";
 #include <stdint.h>
 
-using std::int32_t;
-
+/// <summary>
+/// Represents a lost item
+/// </summary>
 class LostItem : public DataObjectStructure {
    private:
+    /// <summary>
+    /// The unique ID for the lost item
+    /// </summary>
     uint32_t id;
+    /// <summary>
+    /// The ID of the trip transcation that the item was found/lost on
+    /// </summary>
     uint32_t trip;
+    /// <summary>
+    /// The ID of the user that reported the lost item
+    /// </summary>
     uint32_t reporter;
+    /// <summary>
+    /// The description of the lost item
+    /// </summary>
     string description;
 
    public:
@@ -43,12 +56,24 @@ class LostItem : public DataObjectStructure {
 /// </summary>
 void displayLostItemsList();
 
+/// <summary>
+/// Displays the create lost item menu
+/// </summary>
 void displayCreateLostItem();
 
+/// <summary>
+/// Displays the edit lost item menu
+/// </summary>
 void displayEditLostItem();
 
+/// <summary>
+/// Displays the view lost items menu
+/// </summary>
 void displayViewLostItems();
 
+/// <summary>
+/// Displays the delete lost item menu
+/// </summary>
 void displayDeleteLostItem();
 
 #endif

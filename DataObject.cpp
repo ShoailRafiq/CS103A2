@@ -79,6 +79,7 @@ void DataObjectCollection::save() const {
     ofstream stream(DataObjectCollection::path.c_str(),
                     ios::binary | ios::trunc);
 
+    // Handle failing to open the stream
     if (!stream.is_open()) {
         throw std::exception(
             "Failed to open stream to data object collection file");

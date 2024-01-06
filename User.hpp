@@ -118,10 +118,19 @@ void displayInitAdminMenu();
 /// </summary>
 void displayUsersList();
 
+/// <summary>
+/// Displays a edit user menu
+/// </summary>
 void displayEditUser();
 
+/// <summary>
+/// Displays a view users menu
+/// </summary>
 void displayViewUsers();
 
+/// <summary>
+/// Displays a delete user menu
+/// </summary>
 void displayDeleteUser();
 
 #endif
