@@ -65,6 +65,8 @@ class TripTransaction : public DataObjectStructure {
 
 User* promptSelectCustomer(vector<User*> const& customers);
 
+TripTransaction* prompSelectTrip();
+
 /// <summary>
 /// Displays a list of the trips, relevant for the
 /// current active user type

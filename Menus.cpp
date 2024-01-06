@@ -73,7 +73,7 @@ void displayTripsMenu() {
         cout << "Enter your desired menu: ";
 
         // Get the user menu choice
-        int choice = getInputInt(1, 5);
+        int choice = getInputInt(1, 4);
 
         switch (choice) {
             case 1: {
