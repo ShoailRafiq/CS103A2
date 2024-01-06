@@ -37,12 +37,35 @@ void Complaint::fromObject(DataObject* object) {
     message = object->getEntry("message").asString();
 }
 
-void displayComplaintsList() {}
+void displayComplaintsList() {
+    // TODO: Display list of complaints, only show complaints involving the user
+    // or all complaints if admin
+}
 
-void displayCreateComplaint() {}
+Complaint* promptSelectComplaint() {
+    displayComplaintsList();
 
-void displayEditComplaint() {}
+    while (true) {
+        // TODO: Prompt user for the ID from the complaint list,
+        // find the matching complaint, check complaint author,
+        // return complaint
+    }
+}
 
-void displayViewComplaints() {}
+void displayCreateComplaint() {
+    // TODO: Prompt user for the complaint message and create with author using
+    // activeUser
+}
 
-void displayDeleteComplaint() {}
+void displayEditComplaint() {
+    // TODO: Display complaint list, choose complaint, prompt for new complaint
+    // message, save complaint
+}
+
+void displayViewComplaints() {
+    displayComplaintsList();
+}
+
+void displayDeleteComplaint() {
+    // TODO: Display complaint list, choose complaint, delete complaint
+}

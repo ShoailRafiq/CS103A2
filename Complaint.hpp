@@ -45,6 +45,13 @@ class Complaint : public DataObjectStructure {
 };
 
 /// <summary>
+/// Prompts the user to select a complaint from a list of
+/// complaints
+/// </summary>
+/// <returns>The selected complaint</returns>
+Complaint* promptSelectComplaint();
+
+/// <summary>
 /// Displays a list of the complaints, relevant for the
 /// current active user type
 /// </summary>
