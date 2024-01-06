@@ -170,6 +170,7 @@ void displayInitAdminMenu() {
             cout << "Please enter name: ";
             name = getInputString();
 
+            // Ensure name is not empty
             if (name.length() == 0) {
                 cerr << "Name cannot be empty, please try again" << endl;
                 continue;
@@ -239,12 +240,30 @@ void displayRegisterMenu() {
 }
 
 void displayAuthMenu() {
-    while (true) {
-        displayDivider();
-        cout << "Auth Menu" << endl;
-        displayDivider();
+    displayDivider();
+    cout << "Authentication Menu" << endl;
+    displayDivider();
+    cout << " 1) Login" << endl;
+    cout << " 2) Register" << endl;
+    cout << " 3) Exit" << endl;
+    displayDivider();
+    cout << "Enter your desired menu: ";
 
-        while (true) {
+    // Get the user menu choice
+    int choice = getInputInt(1, 3);
+
+    switch (choice) {
+        case 1: {
+            displayLoginMenu();
+            break;
+        }
+        case 2: {
+            displayRegisterMenu();
+            break;
+        }
+        case 3: {
+            exit(0);
+            break;
         }
     }
 }

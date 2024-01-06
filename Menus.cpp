@@ -17,7 +17,7 @@ void displayCustomerMenu() {
     cout << " 3) Complaints" << endl;
     cout << " 4) Logout" << endl;
     displayDivider();
-    cout << "Enter your desired menu: " << endl;
+    cout << "Enter your desired menu: ";
 
     // Get the user menu choice
     int choice = getInputInt(1, 4);
@@ -51,10 +51,10 @@ void displayAdminMenu() {
     cout << " 4) Users" << endl;
     cout << " 5) Logout" << endl;
     displayDivider();
-    cout << "Enter your desired menu: " << endl;
+    cout << "Enter your desired menu: ";
 
     // Get the user menu choice
-    int choice = getInputInt(1, 4);
+    int choice = getInputInt(1, 5);
 
     switch (choice) {
         case 1: {
@@ -86,7 +86,7 @@ void displayDriverMenu() {
     cout << " 3) Complaints" << endl;
     cout << " 4) Logout" << endl;
     displayDivider();
-    cout << "Enter your desired menu: " << endl;
+    cout << "Enter your desired menu: ";
 
     // Get the user menu choice
     int choice = getInputInt(1, 4);

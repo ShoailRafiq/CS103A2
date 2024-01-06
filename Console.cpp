@@ -18,6 +18,9 @@ int32_t getInputInt(int32_t min, int32_t max) {
     while (true) {
         cin >> out;
 
+        // Ignore the newline character after the input
+        cin.ignore();
+
         // Handle invalid values
         if (cin.fail()) {
             cerr << "Invalid value provided, please provide a number" << endl;
@@ -54,10 +57,12 @@ float getInputFloat(float min, float max) {
 
     while (true) {
         cin >> out;
+        // Ignore the newline character after the input
+        cin.ignore();
 
         // Handle invalid values
         if (cin.fail()) {
-            cerr << "Invalid value provided, please provide a number" << endl;
+            cerr << "\nInvalid value provided, please provide a number" << endl;
 
             // Clear the stream state
             cin.clear();
@@ -69,14 +74,15 @@ float getInputFloat(float min, float max) {
 
         // Minimum bound check
         if (out < min) {
-            cerr << "That number is too small, it must be atleast " << min
+            cerr << "\nThat number is too small, it must be atleast " << min
                  << endl;
             continue;
         }
 
         // Maximum bound check
         if (out > max) {
-            cerr << "That number is too big it must be at most " << max << endl;
+            cerr << "\nThat number is too big it must be at most " << max
+                 << endl;
             continue;
         }
 
@@ -91,10 +97,12 @@ bool getInputBool() {
 
     while (true) {
         cin >> out;
+        // Ignore the newline character after the input
+        cin.ignore();
 
         // Handle invalid values
         if (cin.fail()) {
-            cerr << "Invalid value provided, please provide a number" << endl;
+            cerr << "\nInvalid value provided, please provide a number" << endl;
 
             // Clear the stream state
             cin.clear();
