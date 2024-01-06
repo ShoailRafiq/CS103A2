@@ -49,9 +49,9 @@ void User::populateObject(DataObject* object) {
 
 void User::fromObject(DataObject* object) {
     id = object->getId();
-    *reinterpret_cast<int32_t*>(&type) = *object->getEntry("type")->asInt();
-    name = *object->getEntry("name")->asString();
-    password = *object->getEntry("password")->asString();
+    *reinterpret_cast<int32_t*>(&type) = object->getEntry("type").asInt();
+    name = object->getEntry("name").asString();
+    password = object->getEntry("password").asString();
 }
 
 User* getAdminUser() {
@@ -73,6 +73,30 @@ User* getAdminUser() {
     // No user found, cleanup and return null
     delete user;
     return nullptr;
+}
+
+/// <summary>
+/// Finds and collections all the customer type users
+/// </summary>
+/// <returns></returns>
+vector<User*> getCustomers() {
+    DataObjectCollection* users = Stores::getUsers();
+    vector<User*> out{};
+    // Search through all the user objects
+    for (size_t i = 0; i < users->getObjectCount(); i++) {
+        User* user = new User();
+        DataObject* userObject = users->getObject(i);
+        user->fromObject(userObject);
+
+        // Find customer type users
+        if (user->getType() == UserType::CUSTOMER) {
+            out.push_back(user);
+        } else {
+            delete user;
+        }
+    }
+
+    return out;
 }
 
 bool isAdminUserSet() {
@@ -334,8 +358,8 @@ void displayRegisterMenu() {
 
 void displayAuthMenu() {
     displayDivider();
-    cout << "Taxi Trip booking system. Book and manage taxi"
-            "services.\nContact: (+64) 123 4567 890"
+    cout << "Taxi Trip booking system. Book and manage\n"
+            "taxi services.\nContact: (+64) 123 4567 890"
          << endl;
 
     displayDivider();

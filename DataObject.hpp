@@ -89,25 +89,25 @@ class DataValue {
     DataValue(float value);
 
     /// <summary>
-    /// Attempts to get a pointer to the underlying value as a string value,
-    /// if the underlying value is not a string a nullptr is returned.
+    /// Provides the string value of this value, will
+    /// throw a runtime error if the type is not a string
     /// </summary>
-    /// <returns>Pointer to the string value or a nullptr</returns>
-    string* asString();
+    /// <returns>The string value</returns>
+    string asString() const;
 
     /// <summary>
-    /// Attempts to get a pointer to the underlying value as a int value,
-    /// if the underlying value is not a int a nullptr is returned.
+    /// Provides the int value of this value, will
+    /// throw a runtime error if the type is not a int
     /// </summary>
-    /// <returns>Pointer to the int value or a nullptr</returns>
-    int32_t* asInt();
+    /// <returns>The int value</returns>
+    int32_t asInt() const;
 
     /// <summary>
-    /// Attempts to get a pointer to the underlying value as a float value,
-    /// if the underlying value is not a float a nullptr is returned.
+    /// Provides the float value of this value, will
+    /// throw a runtime error if the type is not a float
     /// </summary>
-    /// <returns>Pointer to the float value or a nullptr</returns>
-    float* asFloat();
+    /// <returns>The float value</returns>
+    float asFloat() const;
 
     /// <summary>
     /// Assings self from the provided other data value
@@ -172,7 +172,7 @@ class DataObject {
     /// entry doesn't exist
     /// </summary>
     /// <param name="key">The entry key</param>
-    DataValue* getEntry(string key);
+    const DataValue& getEntry(string key);
 
     /// <summary>
     /// Clears the contents of the object

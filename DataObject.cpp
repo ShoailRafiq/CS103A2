@@ -231,8 +231,14 @@ void DataObject::setEntry(string key, DataValue value) {
     DataObject::entries.insert(std::make_pair(key, value));
 }
 
-DataValue* DataObject::getEntry(string key) {
-    return &DataObject::entries[key];
+const DataValue& DataObject::getEntry(string key) {
+    map<string, DataValue>::const_iterator it = DataObject::entries.find(key);
+
+    if (it == DataObject::entries.end()) {
+        throw std::runtime_error("Missing expected entry '" + key + "'");
+    }
+
+    return it->second;
 }
 
 void serializeString(ofstream& stream, const string& value) {
@@ -352,25 +358,25 @@ DataValue::DataValue(int32_t value)
 
 DataValue::DataValue(float value) : type(DataValue::FLOAT), floatValue(value) {}
 
-string* DataValue::asString() {
+string DataValue::asString() const {
     if (DataValue::type != DataValue::STRING) {
-        return nullptr;
+        throw std::runtime_error("Data value was not string type");
     }
-    return &this->stringValue;
+    return stringValue;
 }
 
-int32_t* DataValue::asInt() {
+int32_t DataValue::asInt() const {
     if (DataValue::type != DataValue::INTEGER) {
-        return nullptr;
+        throw std::runtime_error("Data value was not int type");
     }
-    return &this->intValue;
+    return intValue;
 }
 
-float* DataValue::asFloat() {
+float DataValue::asFloat() const {
     if (DataValue::type != DataValue::FLOAT) {
-        return nullptr;
+        throw std::runtime_error("Data value was not float type");
     }
-    return &this->floatValue;
+    return floatValue;
 }
 
 void DataValue::serialize(ofstream& stream) const {

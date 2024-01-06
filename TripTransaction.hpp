@@ -44,10 +44,10 @@ class TripTransaction : public DataObjectStructure {
     uint32_t getId() const;
 
     uint32_t getDriver() const;
-    void setDriver(User const& driver);
+    void setDriver(User* driver);
 
     uint32_t getCustomer() const;
-    void setCustomer(User const& customer);
+    void setCustomer(User* customer);
 
     Cost getCost() const;
     void setCost(Cost cost);
@@ -62,6 +62,8 @@ class TripTransaction : public DataObjectStructure {
     void fromObject(DataObject* object) override;
     uint32_t getObjectId() const override;
 };
+
+User* promptSelectCustomer(vector<User*> const& customers);
 
 /// <summary>
 /// Displays a list of the trips, relevant for the

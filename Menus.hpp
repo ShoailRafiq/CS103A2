@@ -22,9 +22,14 @@ void displayDriverMenu();
 void displayAdminMenu();
 
 /// <summary>
-/// Displays the trips menu
+/// Displays the customer and admin trips menu
 /// </summary>
 void displayTripsMenu();
+
+/// <summary>
+/// Displays the driver specific trips menu
+/// </summary>
+void displayDriverTripsMenu();
 
 /// <summary>
 /// Displays the lost items menu

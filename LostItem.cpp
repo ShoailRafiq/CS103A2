@@ -42,9 +42,9 @@ void LostItem::populateObject(DataObject* object) {
 
 void LostItem::fromObject(DataObject* object) {
     id = object->getId();
-    trip = (uint32_t)*object->getEntry("trip")->asInt();
-    reporter = (uint32_t)*object->getEntry("reporter")->asInt();
-    description = *object->getEntry("description")->asString();
+    trip = (uint32_t)object->getEntry("trip").asInt();
+    reporter = (uint32_t)object->getEntry("reporter").asInt();
+    description = object->getEntry("description").asString();
 }
 
 void displayLostItemsList() {}

@@ -94,6 +94,12 @@ bool isAdminUserSet();
 User* getUserByName(string const& name);
 
 /// <summary>
+/// Finds and collections all the customer type users
+/// </summary>
+/// <returns></returns>
+vector<User*> getCustomers();
+
+/// <summary>
 /// Display a menu showing the login and registration options
 /// </summary>
 void displayAuthMenu();

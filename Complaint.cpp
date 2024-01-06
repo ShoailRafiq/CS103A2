@@ -33,8 +33,8 @@ void Complaint::populateObject(DataObject* object) {
 
 void Complaint::fromObject(DataObject* object) {
     id = object->getId();
-    author = (uint32_t)*object->getEntry("author")->asInt();
-    message = *object->getEntry("message")->asString();
+    author = (uint32_t)object->getEntry("author").asInt();
+    message = object->getEntry("message").asString();
 }
 
 void displayComplaintsList() {}

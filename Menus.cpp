@@ -10,15 +10,11 @@ using std::cerr;
 using std::cout;
 using std::endl;
 
-void displayTripsMenu() {
-    // Get the active user and trips collection
-    DataObjectCollection* trips = Stores::getTripTransactions();
-    User* activeUser = Stores::getActiveUser();
-
+void displayDriverTripsMenu() {
     while (true) {
         // Display the menu
         displayDivider();
-        cout << "Trips Menu" << endl;
+        cout << "Trips Driver Menu" << endl;
         displayDivider();
         cout << " 1) Create Trip" << endl;
         cout << " 2) Edit Trip" << endl;
@@ -49,6 +45,50 @@ void displayTripsMenu() {
                 break;
             }
             case 5: {
+                return;
+            }
+        }
+    }
+}
+
+void displayTripsMenu() {
+    User* activeUser = Stores::getActiveUser();
+
+    // Drivers have a seperate trips menu which allows creating
+    if (activeUser->getType() == UserType::DRIVER) {
+        displayDriverTripsMenu();
+        return;
+    }
+
+    while (true) {
+        // Display the menu
+        displayDivider();
+        cout << "Trips Menu" << endl;
+        displayDivider();
+        cout << " 1) Edit Trip" << endl;
+        cout << " 2) View Trips" << endl;
+        cout << " 3) Cancel Trip" << endl;
+        cout << " 4) Go Back" << endl;
+        displayDivider();
+        cout << "Enter your desired menu: ";
+
+        // Get the user menu choice
+        int choice = getInputInt(1, 5);
+
+        switch (choice) {
+            case 1: {
+                displayEditTrip();
+                break;
+            }
+            case 2: {
+                displayViewTrips();
+                break;
+            }
+            case 3: {
+                displayCancelTrip();
+                break;
+            }
+            case 4: {
                 return;
             }
         }

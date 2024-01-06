@@ -1,15 +1,15 @@
 #include "Console.hpp"
+#include <iomanip>
 #include <iostream>
 #include <limits>
 #include <string>
-
 using std::cerr;
 using std::cin;
 using std::cout;
 using std::endl;
 
 void displayDivider() {
-    cout << "-----------------------------------------" << endl;
+    cout << std::setw(60) << std::setfill('-') << "" << endl;
 }
 
 int32_t getInputInt(int32_t min, int32_t max) {
