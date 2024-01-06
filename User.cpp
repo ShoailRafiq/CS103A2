@@ -115,15 +115,9 @@ void displayLoginMenu() {
         User* user = getUserByName(name);
 
         if (user == nullptr) {
-            cerr << "No user with that username found, do you want to try "
-                    "again? [Y/N]: ";
-
-            bool tryAgain = getInputBool();
-            if (tryAgain) {
-                continue;
-            } else {
-                break;
-            }
+            cerr << "No user with that username found, please try again"
+                 << endl;
+            continue;
         }
 
         cout << "Please enter password: ";
@@ -133,15 +127,10 @@ void displayLoginMenu() {
             // Delete failed user
             delete user;
 
-            cerr << "Provided password doesn not match, do you want to try "
-                    "again?, [Y/N]: ";
+            cerr << "Provided password doesn not match, please try again"
+                 << endl;
 
-            bool tryAgain = getInputBool();
-            if (tryAgain) {
-                continue;
-            } else {
-                break;
-            }
+            continue;
         }
 
         displayDivider();
@@ -173,6 +162,15 @@ void displayInitAdminMenu() {
             // Ensure name is not empty
             if (name.length() == 0) {
                 cerr << "Name cannot be empty, please try again" << endl;
+                continue;
+            }
+
+            // Prevent duplicate names
+            User* existing = getUserByName(name);
+            if (existing != nullptr) {
+                delete existing;
+                cerr << "That name is already in use. please choose another"
+                     << endl;
                 continue;
             }
 
@@ -234,8 +232,103 @@ void displayInitAdminMenu() {
 void displayRegisterMenu() {
     while (true) {
         displayDivider();
-        cout << "Login Menu" << endl;
+        cout << "Create Account" << endl;
         displayDivider();
+
+        cout << "Please enter the credentials for your new account" << endl;
+
+        displayDivider();
+        cout << "Account type" << endl;
+        displayDivider();
+        cout << "1) Customer" << endl;
+        cout << "2) Driver" << endl;
+        displayDivider();
+        cout << "Please enter your desired account type: ";
+        // Get the user menu choice
+        int userType = getInputInt(1, 2);
+
+        UserType type = UserType::CUSTOMER;
+        switch (userType) {
+            case 1: {
+                type = UserType::CUSTOMER;
+                break;
+            }
+            case 2: {
+                type = UserType::DRIVER;
+                break;
+            }
+        }
+
+        string name;
+        while (true) {
+            cout << "Please enter name: ";
+            name = getInputString();
+
+            // Ensure name is not empty
+            if (name.length() == 0) {
+                cerr << "Name cannot be empty, please try again" << endl;
+                continue;
+            }
+
+            // Prevent duplicate names
+            User* existing = getUserByName(name);
+            if (existing != nullptr) {
+                delete existing;
+                cerr << "That name is already in use. please choose another"
+                     << endl;
+                continue;
+            }
+
+            break;
+        }
+
+        string password;
+        while (true) {
+            cout << "Please enter password: ";
+            password = getInputString();
+
+            if (password.length() == 0) {
+                cerr << "Password cannot be empty, please try again" << endl;
+                continue;
+            }
+
+            break;
+        }
+
+        string confirmPassword;
+
+        while (true) {
+            cout << "Please confirm password: ";
+            confirmPassword = getInputString();
+
+            if (password != confirmPassword) {
+                cerr << "Password confirmation does not match password, please "
+                        "try again"
+                     << endl;
+                continue;
+            }
+
+            break;
+        }
+
+        cout << "Account creation complete, you are now logged in." << endl;
+
+        User* user = new User();
+        user->setName(name);
+        user->setPassword(password);
+        user->setType(type);
+
+        // Store the created user
+        DataObjectCollection* users = Stores::getUsers();
+        DataObject* userObject = users->storeStruct(user);
+
+        // Update the user data
+        user->fromObject(userObject);
+
+        // Set the new admin user
+        Stores::setActiveUser(user);
+
+        break;
     }
 }
 
