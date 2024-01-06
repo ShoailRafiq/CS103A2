@@ -103,6 +103,7 @@ User* promptSelectCustomer(vector<User*> const& customers) {
 void displayTripsList() {
     DataObjectCollection* users = Stores::getUsers();
     DataObjectCollection* trips = Stores::getTripTransactions();
+    User* activeUser = Stores::getActiveUser();
 
     TripTransaction* trip = new TripTransaction();
     User* driver = new User();
@@ -124,6 +125,14 @@ void displayTripsList() {
 
         DataObject* customerObject = users->getObjectById(trip->getCustomer());
         customer->fromObject(customerObject);
+
+        // Ensure the user is apart of the trip or are an admin before including
+        // in list
+        if (trip->getCustomer() != activeUser->getId() &&
+            trip->getDriver() != activeUser->getId() &&
+            activeUser->getType() != UserType::ADMIN) {
+            continue;
+        }
 
         Cost cost = trip->getCost();
 
